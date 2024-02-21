@@ -2,13 +2,21 @@ package com.palauro.workshopmongo.domain;
 
 import java.io.Serializable;
 
-public class User implements Serializable{
-    
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+// Camada de dominío
+
+// Indicar que se trata de uma coleção do MongoDB, dizer que o "user" corresponde a uma coleção do MongoDB.
+@Document(collection = "user")
+public class User implements Serializable {
+
+    @Id // Ira criar um id 
     private String id;
     private String name;
     private String email;
 
-    public User(){
+    public User() {
     }
 
     public User(String id, String name, String email) {
