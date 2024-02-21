@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.palauro.workshopmongo.domain.User;
 import com.palauro.workshopmongo.services.UserService;
 
-// Controladores RESST
+// Controladores REST
 
 @RestController
 @RequestMapping(value = "/users")
