@@ -52,6 +52,12 @@ public class UserResource {
         return ResponseEntity.noContent().build(); //Resposta sem retornar nada, codigo 204.
     }
 
-    
+    @RequestMapping(value = "/{id}",method = RequestMethod.PUT) // Saber o metodo HTTP que será usado nesse endpoint.
+    public ResponseEntity<Void> update(@RequestBody UserDTO objDto, @PathVariable String id) { 
+        User obj = service.fromDTO(objDto);
+        obj.setId(id);
+        obj = service.update(obj);
+        return ResponseEntity.noContent().build();
+    }
 
 }
