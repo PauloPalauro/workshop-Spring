@@ -31,8 +31,13 @@ public class UserService {
         return repository.insert(obj);
     }
 
-    public User fromDTO(UserDTO objDTO) { // Caminho inverso da classe "UserDTO". Instanciando um "User" atraves de um
-                                          // "UserDTO".
+    public void delete(String id){
+        findById(id); // verificar se não é nulo
+        repository.deleteById(id);
+
+    }
+
+    public User fromDTO(UserDTO objDTO) { // Caminho inverso da classe "UserDTO". Instanciando um "User" atraves de um "UserDTO".
         return new User(objDTO.getId(), objDTO.getName(), objDTO.getEmail());
     }
 }

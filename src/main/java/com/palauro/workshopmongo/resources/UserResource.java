@@ -46,4 +46,12 @@ public class UserResource {
         return ResponseEntity.created(uri).build();
     }
 
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE) // Saber o metodo HTTP que será usado nesse endpoint.
+    public ResponseEntity<Void> delete(@PathVariable String id) { 
+        service.delete(id);
+        return ResponseEntity.noContent().build(); //Resposta sem retornar nada, codigo 204.
+    }
+
+    
+
 }
