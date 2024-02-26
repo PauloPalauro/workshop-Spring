@@ -4,10 +4,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-
 import com.palauro.workshopmongo.dto.AuthorDTO;
 import com.palauro.workshopmongo.dto.CommentDTO;
 
@@ -107,9 +105,4 @@ public class Post implements Serializable {
             return false;
         return true;
     }
-
-    
-
-    
-
 }

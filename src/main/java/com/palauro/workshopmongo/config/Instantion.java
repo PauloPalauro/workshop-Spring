@@ -3,11 +3,9 @@ package com.palauro.workshopmongo.config;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.TimeZone;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
-
 import com.palauro.workshopmongo.domain.Post;
 import com.palauro.workshopmongo.domain.User;
 import com.palauro.workshopmongo.dto.AuthorDTO;

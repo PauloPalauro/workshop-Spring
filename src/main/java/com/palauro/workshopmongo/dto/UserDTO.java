@@ -15,7 +15,6 @@ public class UserDTO implements Serializable {
     public UserDTO() {
     }
 
-
     public UserDTO(User obj){ // Instanciando um "UserDTO" a partir de um "User"
         id = obj.getId();
         name = obj.getName();
@@ -45,7 +44,4 @@ public class UserDTO implements Serializable {
     public void setEmail(String email) {
         this.email = email;
     }
-
-
-    
 }
