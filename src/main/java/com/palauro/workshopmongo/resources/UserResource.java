@@ -17,7 +17,7 @@ import com.palauro.workshopmongo.domain.User;
 import com.palauro.workshopmongo.dto.UserDTO;
 import com.palauro.workshopmongo.services.UserService;
 
-// Controladores REST
+// Controladores REST / endpoints
 
 @RestController
 @RequestMapping(value = "/users")
