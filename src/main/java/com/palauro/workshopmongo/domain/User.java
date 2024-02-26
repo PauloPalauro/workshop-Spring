@@ -1,8 +1,10 @@
 package com.palauro.workshopmongo.domain;
 
 import java.io.Serializable;
-
+import java.util.ArrayList;
+import java.util.List;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 // Camada de dominío
@@ -11,10 +13,14 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "user")
 public class User implements Serializable {
 
-    @Id // Ira criar um id 
+    @Id // Ira criar um id
     private String id;
     private String name;
     private String email;
+
+    // @DBRef = Falar que um atributo ta referenciando outra coleção no MongoDB.
+    @DBRef(lazy = true) // (lazy = true) = Garantir que os posts so vão ser carregados, seu explicitamente acessa-los.
+    private List<Post> posts = new ArrayList<>();
 
     public User() {
     }
@@ -47,6 +53,14 @@ public class User implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public List<Post> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<Post> posts) {
+        this.posts = posts;
     }
 
     @Override
